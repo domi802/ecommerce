@@ -1,0 +1,96 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
+<link rel="stylesheet" href="{% static '/css/style.css'%}">
+    <title>Strona Główna</title>
+</head>
+<body>
+    
+    <div class="nav">
+      
+            <nav class="  nav">
+                <a class="navbar-brand nazwa" href="/">
+                    <img src="{%static '/img/laptop.png'%}" width="100" height="100">
+                    E-CLOTHES.PL
+                </a>
+              
+            
+                    <ol>
+                        <li><a href="#">DLA NIEGO</a>
+                            <ul>
+                                <li><a href="#">BLUZY</a></li>
+                                <li><a href="#">T-SHIRTY</a></li>
+                                <li><a href="#">SPODNIE</a></li>
+                                <li><a href="#">BUTY</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">DLA NIEJ</a>
+                            <ul>
+                                <li><a href="#">BLUZY</a></li>
+                                <li><a href="#">T-SHIRTY</a></li>
+                                <li><a href="#">SPODNIE</a></li>
+                                <li><a href="#">BUTY</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="sale" href="#">WYPRZEDAŻE</a>
+                        </li>
+                        <li><a href="#">KONTAKT</a>
+                        </li>
+                    </ol>
+                  <div class="koszyk">
+                    <a class="navbar-brand" href="">
+                      <img src="{%static '/img/shopping-basket.png'%}" width="90" height="90" alt="">
+                    </a>
+                </div>
+                </div>
+    </header>
+{%block main%}
+{%endblock main%}
+
+<footer>
+<div class="platnosc">
+    Akceptowalne metody płatności
+    <div><img src="{%static '/img/master.jpg'%}" width="100" height="50" class="zdjecia" ></div>
+    <div><img src="{%static '/img/visa.jpg'%}" width="100" height="50" class="zdjecia" ></div>
+    <div><img src="{%static '/img/paypal.jpg'%}" width="100" height="50" class="zdjecia" ></div>
+    <div><img src="{%static '/img/payu.jpg'%}" width="100" height="50" class="zdjecia" ></div>
+    <div><img src="{%static '/img/zapobraniem.jpg'%}" width="230" height="50" class="zdjecia" ></div>
+    <div><img src="{%static '/img/przelew.jpg'%}" width="230" height="50" class="zdjecia" ></div>
+</div>
+<div class="platnosc">
+Dostępne sposoby dostawy
+<div> <img src="{%static '/img/poczta.jpg'%}" width="200" height="50" class="zdjecia"></div>
+<div> <img src="{%static '/img/gls.jpg'%}" width="150" height="50" class="zdjecia"></div>
+<div> <img src="{%static '/img/inpost.jpg'%}" width="150" height="50" class="zdjecia"></div>
+<div> <img src="{%static '/img/dhl.jpg'%}" width="200" height="50" class="zdjecia"></div>
+</div>
+
+<div class="korzysci">
+<div>
+    Korzyści z kupowania w naszym sklepie<br><br><br>
+  <div><img src="{%static '/img/truck.png'%}" width="50" height="50"  > <a class="a" >Darmowa dostawa powyżej 150 PLN</a> </div>
+ <br> <img src="{%static '/img/reply.png'%}" width="50" height="50"  > <a class="a" >Zwroty gratis</a>
+  <div><br><img src="{%static '/img/calendar.png'%}" width="50" height="50"  > <a class="a" >100-dniowe prawo zwrotu</a></div><br>
+  <img src="{%static '/img/phone.png'%}" width="50" height="50" > <a class="a" >Bezpłatna infolinia : 123-654-789</a>
+</div>
+<div class="tak">
+    Korzyści z kupowania w naszym sklepie <br><br><br>
+    <div>    <img src="{%static '/img/pin.png'%}" width="50" height="50"> <a class="a">Lokalizacja biura  Piernikowa 321a, 44-100 Gliwice</a> </div>
+  <br>  <img src="{%static '/img/clock.png'%}" width="50" height="50"> <a class="a">Godziny otwarcia biura: </a><br>
+    <a class="b">Poniedziałek-Piątek 9-16 </a><br>
+     <a class="c"> Sobota i Niedziela biuro nieczynne</a> </a>
+</div>
+</div>
+<div class="napis">Strona powstała w celach educkacyjnych</div>
+</footer>
+</body>
+</html>

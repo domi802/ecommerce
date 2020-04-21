@@ -1,0 +1,354 @@
+.nazwa{
+    color: white;
+	font-size: 50px;
+	text-decoration: none;
+	
+}
+a.nazwa:hover{
+	color: white;
+}
+
+.nav
+{ 
+	width: 100%;
+	padding: 10px 0;
+	background-color: black;
+	text-align: center;
+	
+}
+
+
+ol
+{
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	font-size: 20px;
+	height: 35px;
+	line-height: 200%;
+    display: inline-block;
+    margin-top: 30px;
+    padding-left: 100px;;
+}
+
+ol a
+{
+	color: #ffffff;
+	text-decoration: none;
+	display: block;
+}
+
+ol > li
+{
+	float: left;
+	width: 150px;
+	height: 40px;
+	border-right: 1px dashed black;
+}
+
+ol > li:first-child
+{
+	border-left: 1px dashed #000000;
+}
+
+
+
+ol > li:hover > a
+{
+	color: #ffffff;
+}
+
+ol > li > ul
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	height: 40px;
+	display: none;
+}
+
+ol > li:hover > ul
+{
+	display: block;
+}
+
+ol > li > ul > li
+{
+	background-color:black;
+	position: relative;
+	z-index: 100;
+
+}
+
+ol > li > ul > li:hover
+{
+	background-color: #e20b0b;
+}
+
+ol > li > ul > li:hover > a
+{
+    color:white;
+}
+.koszyk{
+
+padding-left: 600px;
+}
+.sale{
+    color: red;
+    text-decoration: none;
+}
+main{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: auto;
+	
+}
+    
+}
+.cover {
+  object-fit: cover;
+}
+.slider{
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.nowosci{
+	padding-top: 100px;
+	text-align: center;
+	padding-bottom: 50px;
+	font-size: 80px;
+
+}
+
+
+.grid-container {
+  display: grid;
+  grid-column-gap: 4px;
+  grid-template-columns: auto auto auto auto;
+	padding-top: 100px;
+	padding-bottom: 100px;
+  padding-left: 140px;
+  
+  
+}
+
+.grid-item {
+  background-color: rgba(1, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 50px;
+  font-size: 10px;
+  text-align: center;
+  
+}
+ 
+.ceny{
+	text-align: end;
+} 
+
+.reklama{
+	width: 100%;
+	height: 200px;
+	background-color: black;
+	text-align: center;
+	color: yellow;
+	font-size: 80px;
+	padding-top: 35px;
+}
+
+.cena{
+	font-size: 20px;
+	color: goldenrod;
+}
+.rzecz{
+padding-top: 10px;
+font-size: 20px;
+}
+
+
+.flex-container {
+	display: flex;
+	margin-top: 150px;
+	height: auto;
+	padding-bottom: 150px;
+  }
+
+  
+  .pudelka {
+	background-color: #f1f1f1;
+	width: 200px;
+	height: 200px;
+	margin-left: 200px;
+	text-align: center;
+	line-height: 75px;
+	font-size: 30px;
+	border-radius: 15px;
+	
+  }
+  .cos  {
+	  background-color: #285C94;
+	  padding-top: 20px;
+  }
+  .zdj{
+	  text-align: center;
+	  margin-top: 50px;;
+  }
+  footer{
+	width: 100%;
+	background-color: black;
+	
+}
+
+.platnosc{
+	display: flex;
+	color: #FCB208;
+	padding-top: 30px;
+	margin-left: 25px;
+	padding-bottom: 30px;
+}
+.zdjecia{
+	margin-left: 100px;
+	
+}
+.korzysci{
+	display: flex;
+	color: #FCB208;
+	padding-top: 40px;
+	margin-left: 25px;
+	padding-bottom: 100px;
+}
+.tak{
+	margin-left: 800px;
+}
+.a{
+	margin-left: 50px;
+}
+.b{
+	margin-left: 105px;
+	padding-bottom: 30px;
+}
+.c{
+	margin-left: 105px;	
+	
+}
+.napis{
+	text-align: center;
+	width: 100%;
+	color: #FCB208 ;
+}
+
+.produkty{
+display: grid;
+grid-template-columns: repeat(4,1fr);
+width: 80%;
+height: auto;
+
+margin-right: 10%;
+padding-top: 100px;
+padding-bottom: 150px;
+}
+
+.kurtka{
+	width: 350px;
+	height: 560px;
+	border: solid; 
+	border-radius: 15px;
+	margin-left: 100px;
+	text-align: center ;
+	box-shadow: 2px 2px 4px;
+	margin-bottom: 50px;
+	
+}
+.nazwa_produktu{
+	text-align: center;
+	font-size: 20px;
+	padding-top: 5px;
+ 
+}
+.zdjecie{
+	border-top-left-radius:15px;
+	border-top-right-radius:15px;
+	
+}
+
+.guzik{
+	display: none;
+	background-color: #D8D0D0;
+	justify-content: space-between;
+	border-radius: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;;
+	border: none;
+	
+}
+.produkty .kurtka:hover .guzik {
+	display: block;
+	
+	
+}
+
+
+
+
+
+.tytul_produktu{
+	padding-top: 100px;
+}
+
+
+ul.thumb
+{
+margin: 0 auto;
+padding: 0;
+float: left;
+}
+ul.thumb li
+{
+	list-style: none;
+	margin: 0 10px;
+	width: 100px;
+	height: 100px;
+	border: 1px solid rgba(0, 0, 0, .2);
+	overflow: hidden;
+}
+ul.thumb li img{
+	width: 100%;
+}
+.imgBox{
+	float: left;
+	width: 500px;
+	height: 600px;
+	margin-left: 5px;
+	border: 1px solid rgba(0, 0, 0, .2);
+	overflow: hidden;
+}
+.imgBox img
+{
+width: 100%;
+}
+li a img{
+	width: 100px;
+	height: 100px;
+
+}
+figure img 
+{
+width: 500px ;
+height: 600px;
+}
+
+.info
+{
+
+width: 20%;
+background-color: orange;
+margin-left: 70%;
+}
+.obrazy{
+
+}
+.products{
+	display: flex;
+}

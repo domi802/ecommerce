@@ -1,0 +1,40 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block main%}
+<div class="products">
+<main>
+<h1 class="tytul_produktu">{{product.title}}</h1>
+
+<section class="obrazy">
+   <ul class="thumb">
+    {%for item in product.productimage_set.all%}
+       <li><a href="{{item.image.url}}" target="imgBox"><img src="{{item.image.url}}" class="cover" ></a></li>
+    {%endfor%}   
+   </ul>
+   {%for item in product.productimage_set.all%}
+   {%if item.thumbnail %}
+   <figure class="imgBox contain"><img src="{{item.image.url}}"  >
+</figure>
+{%endif%}
+{%endfor%} 
+</section>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.thumb a').click(function(e){
+            e.preventDefault();
+            $('.imgBox img').attr("src", $(this).attr("href"))
+        })
+    })
+</script>
+
+<section class="info">
+    <h1>{{product.price}} PLN</h1>
+{% autoescape on %}
+   {{product.text|safe}}
+{% endautoescape %}
+    
+</section>
+</div>
+</main>
+{%endblock main%}
