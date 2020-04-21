@@ -343,6 +343,7 @@ height: 600px;
 {
 width: 20%;
 margin-left: 70%;
+background-color: black
 }
 .obrazy{
 
@@ -350,3 +351,16 @@ margin-left: 70%;
 .products{
 	display: flex;
 }
+
+button {
+	background: linear-gradient(#ec5e5c, #b22c35);
+	transform: skew(-20deg);
+	padding: 20px;
+	color: #fff;
+	border-radius: 10px;
+  }
+   
+  button span {
+	display: block;
+	transform: skew(20deg);
+  }
