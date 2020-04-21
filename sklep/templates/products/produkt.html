@@ -1,8 +1,10 @@
 {%extends 'base.html'%}
 {%load static%}
 {%block main%}
+
 <div class="products">
 <main>
+
 <h1 class="tytul_produktu">{{product.title}}</h1>
 
 <section class="obrazy">
@@ -33,7 +35,21 @@
 {% autoescape on %}
    {{product.text|safe}}
 {% endautoescape %}
-<button >Kup se</button>
+<br><br>
+<p>Wybierz rozmiar:<p>
+      <div class="radio-toolbar">
+        <input type="radio" id="sizes" name="size" value="S" >
+        <label for="sizes">S</label>
+        <input type="radio" id="sizem" name="size" value="M" >
+        <label for="sizem">M</label>
+        <input type="radio" id="sizel" name="size" value="L" >
+        <label for="sizel">L</label>
+        <input type="radio" id="sizexl" name="size" value="XL" >
+        <label for="sizexl">XL</label>
+        <input type="radio" id="sizexxl" name="size" value="XXL" >
+        <label for="sizexxl">XXL</label>
+    </div>
+<button href="#" class="myButton">Dodaj do koszyka</button>
 </section>
 </div>
 </main>

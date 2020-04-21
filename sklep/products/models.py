@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class product(models.Model):
-    title = models.CharField(max_length=20)
+    title = models.CharField(max_length=50)
     text = models.TextField()
     price = models.DecimalField(decimal_places=2, max_digits=100)
     slug = models.SlugField(unique=True)
