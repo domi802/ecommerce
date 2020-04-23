@@ -50,7 +50,8 @@
         <input type="radio" id="sizexxl" name="size" value="XXL" >
         <label for="sizexxl">XXL</label>
     </div>
-<button href="#" class="myButton">Dodaj do koszyka</button>
+<button href='{% url "update_cart" product.slug %}' class="myButton">Dodaj do koszyka</button>
+<a href='{% url "update_cart" product.slug %}'>Dodaj do koszyka</a>
 </section>
 </div>
 </main>

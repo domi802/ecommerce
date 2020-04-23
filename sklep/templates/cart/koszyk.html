@@ -3,12 +3,26 @@
 {% block main %}
 
 <main class="cart">
-    <section>1</section>
-    <section>2</section>
-    <section>3</section>
+ 
+    <section class="basket_border">Nazwa produktu</section>
+    <section class="basket_border"> Rozmiar</section>
+    <section class="basket_border">Ilość</section>
+    <section class="basket_border">Usuń</section>
+    <section class="basket_border">Cena </section>
+    {% for item in cart.products.all %}
+    <section class="basket_border">{{item}}</section>
+    <section class="basket_border">2</section>
+    <section class="basket_border">3</section>
+    <a class="basket_border" href='{{ item.slug }}' >Usuń</a>
+    <section class="basket_border">{{item.price}} PLN</section>
+    {%endfor%}
+    <section class="basket_border"></section>
+    <section class="basket_border"></section>
+    <section class="basket_border"></section>
+    <section class="basket_border"></section>
+    <section class="basket_border">Suma: {{cart.total}} PLN</section>
 
-    <section>4</section>
-    <section>5</section>
+   
 </main>
 
 
