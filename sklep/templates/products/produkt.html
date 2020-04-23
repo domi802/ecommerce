@@ -1,13 +1,10 @@
 {%extends 'base.html'%}
 {%load static%}
 {%block main%}
-
-<div class="products">
 <main>
-
-<h1 class="tytul_produktu">{{product.title}}</h1>
-
+<div class="products">
 <section class="obrazy">
+    <h1 class="tytul_produktu">{{product.title}}</h1>
    <ul class="thumb">
     {%for item in product.productimage_set.all%}
        <li><a href="{{item.image.url}}" target="imgBox"><img src="{{item.image.url}}" class="cover" ></a></li>
@@ -30,8 +27,12 @@
     })
 </script>
 
-<section class="info">
-    <h1>{{product.price}} PLN</h1>
+<section >
+    {%if product.sale_price%}
+    <del>{{product.price}}PLN </del> <h1 class="pomarancz" > {{product.sale_price}}PLN</h1>
+    {%else%}
+    <h1>{{product.price}}PLN</h1>
+    {%endif%}
 {% autoescape on %}
    {{product.text|safe}}
 {% endautoescape %}

@@ -28,7 +28,7 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-    <h1 class="nowosci" > NOWOŚCI DLA NIEJ</h1>
+    <h1 class="nowosci" > OSTATNIE SZTUKI</h1>
       
     <div class="produkty">
         {% for p in product %}
@@ -41,7 +41,11 @@
             {%endfor%}
            
             <div class="nazwa_produktu"  ><a  class="nazwa_produktu" href='/produkty/{{p.slug}}' > {{p.title}} </a> </div>
-        <div><a> {{p.price}}PLN </a> </div>
+        <div> {%if p.sale_price%}
+            <span class="pomarancz">{{ p.sale_price}}PLN</span> <del>{{p.price}}PLN </del>
+            {%else%}
+            <h4>{{p.price}} PLN</h4>
+            {%endif%} </a> </div>
         <button class="guzik"><img src="{%static '/img/koszyk.png'%}" width="30px"height="30px" > Dodaj do koszyka</button>
         </div>
         
@@ -81,7 +85,7 @@
     <div class="reklama">
        TYLKO DZIŚ WYSYŁKA GRATIS !!!!
     </div>
-    <h1 class="nowosci" > OSTATNIE SZTUKI</h1>
+    <h1 class="nowosci" > NOWOŚCI DLA NIEJ</h1>
       
     <div class="produkty">
         <div class="kurtka">
@@ -125,4 +129,5 @@
               </div>  
             
 </main>
+{%include "footer.html"%}
 {%endblock main%}
