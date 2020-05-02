@@ -37,21 +37,25 @@
    {{product.text|safe}}
 {% endautoescape %}
 <br><br>
-<p>Wybierz rozmiar:<p>
-      <div class="radio-toolbar">
-        <input type="radio" id="sizes" name="size" value="S" >
-        <label for="sizes">S</label>
-        <input type="radio" id="sizem" name="size" value="M" >
-        <label for="sizem">M</label>
-        <input type="radio" id="sizel" name="size" value="L" >
-        <label for="sizel">L</label>
-        <input type="radio" id="sizexl" name="size" value="XL" >
-        <label for="sizexl">XL</label>
-        <input type="radio" id="sizexxl" name="size" value="XXL" >
-        <label for="sizexxl">XXL</label>
-    </div>
-<button href='{% url "update_cart" product.slug %}' class="myButton">Dodaj do koszyka</button>
-<a href='{% url "update_cart" product.slug %}'>Dodaj do koszyka</a>
+<p>Wybierz rozmiar:
+        {% if product.variation_set.all %}
+
+          {%if product.variation_set.sizes %}
+          <form class="radio-toolbar" name='size'>
+          {% for item in product.variation_set.sizes %}
+            <input type="radio" id='{{item.title|capfirst}}' name='size'>
+            <label  value='{{item.title|lower}}' for='{{item.title|capfirst}}'>{{item.title|capfirst}} </label>
+            {%endfor%}
+    
+    </form>
+    {%endif%}
+
+    {%endif%}
+<form method="GET" action='{% url "update_cart" product.slug %}'>
+    <input name="qty" type="number"/>
+    <input type="submit" value="Dodaj do koszyka"/>
+</form>   
+<button onclick="window.location.href='{% url "update_cart" product.slug %}'"class="myButton">Dodaj do koszyka</button>
 </section>
 </div>
 </main>
