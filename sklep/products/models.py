@@ -1,13 +1,27 @@
 from django.db import models
 
 # Create your models here.
+
+class Category(models.Model):
+      title = models.CharField(max_length=50)
+      text = models.TextField(null=True, blank=True)
+      slug = models.SlugField(unique= True)
+      active = models.BooleanField(default=True)
+
+      def __str__(self):
+          return self.title
+
+
+
+
 class product(models.Model):
     title = models.CharField(max_length=50)
     text = models.TextField()
+    category = models.ManyToManyField(Category, null=True, blank=True)
     price = models.DecimalField(decimal_places=2, max_digits=100)
     sale_price = models.DecimalField(decimal_places=2, max_digits=100,\
                                                     null=True, blank=True)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique= True)
     def __str__(self):
         return self.title
 
@@ -29,7 +43,7 @@ class VariationManager(models.Manager):
 
 VAR_CATEGORIES = (
     ('size', 'size'),
-    ('color', 'color')
+
 )
 
 class Variation(models.Model):
@@ -42,5 +56,5 @@ class Variation(models.Model):
 
     objects = VariationManager()
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title

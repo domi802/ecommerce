@@ -1,10 +1,11 @@
 from django.db import models
-from products.models import product
+from products.models import product, Variation
 # Create your models here.
 
 class CartItem(models.Model):
     cart = models.ForeignKey('Cart', on_delete=models.DO_NOTHING, null=True, blank=True)
     product = models.ForeignKey(product, on_delete=models.DO_NOTHING, default=True)
+    variations = models.ManyToManyField(Variation, null=True, blank=True)
     line_total = models.DecimalField(default=10.99, max_digits=100, decimal_places=2)
     quantity = models.IntegerField(default=1)
 

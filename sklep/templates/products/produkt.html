@@ -41,21 +41,17 @@
         {% if product.variation_set.all %}
 
           {%if product.variation_set.sizes %}
-          <form class="radio-toolbar" name='size'>
+          <form class="radio-toolbar" method="GET" action='{% url "update_cart" product.slug %}' >
           {% for item in product.variation_set.sizes %}
-            <input type="radio" id='{{item.title|capfirst}}' name='size'>
+            <input type="radio" id='{{item.title|capfirst}}' name='size' value='{{item.title|lower}}'>
             <label  value='{{item.title|lower}}' for='{{item.title|capfirst}}'>{{item.title|capfirst}} </label>
             {%endfor%}
-    
-    </form>
     {%endif%}
-
     {%endif%}
-<form method="GET" action='{% url "update_cart" product.slug %}'>
-    <input name="qty" type="number"/>
-    <input type="submit" value="Dodaj do koszyka"/>
+    <input name='qty' type="number">
+    <button type="submit" class="myButton">Dodaj do koszyka</button>
 </form>   
-<button onclick="window.location.href='{% url "update_cart" product.slug %}'"class="myButton">Dodaj do koszyka</button>
+
 </section>
 </div>
 </main>

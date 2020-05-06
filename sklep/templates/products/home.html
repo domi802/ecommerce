@@ -28,11 +28,13 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-    <h1 class="nowosci" > OSTATNIE SZTUKI</h1>
+    <h1 class="nowosci" > NOWOŚĆI DLA NIEGO</h1>
       
     <div class="produkty">
+      
         {% for p in product %}
-    
+        {%for category in  p.category.all %}
+        {% if category.slug == 'dla-niego' %}
         <div class="kurtka" >
             {%for item in p.productimage_set.all%}
             {%if item.thumbnail %}
@@ -48,8 +50,10 @@
             {%endif%} </a> </div>
         <button class="guzik"><img src="{%static '/img/koszyk.png'%}" width="30px"height="30px" > Dodaj do koszyka</button>
         </div>
-        
+        {%endif%}
         {%endfor%}
+        {%endfor%}
+     
       
 
       </div>
@@ -59,55 +63,27 @@
 <h1 class="nowosci" > NOWOŚCI DLA NIEGO</h1>
       
 <div class="produkty">
-    <div class="kurtka">
-        <img src="man-in-white-dress-shirt-holding-suit-jacket-1043474.jpg" width="100%" height="450px" class="cover zdjecie">
-    <div class="nazwa_produktu" ><a class="nazwa_produktu"> Koszula </a> </div>
-    <div><a> 59.99 PLN </a> </div> <button class="guzik"><img src="koszyk.png" width="30px"height="30px" > Dodaj do koszyka</button>
-    </div>
-    <div class="kurtka">
-        <img src="man-in-white-dress-shirt-holding-suit-jacket-1043474.jpg" width="100%" height="450px" class="cover zdjecie">
-    <div class="nazwa_produktu" ><a class="nazwa_produktu"> Koszula </a> </div>
-    <div><a> 59.99 PLN </a> </div> <button class="guzik"><img src="koszyk.png" width="30px"height="30px" > Dodaj do koszyka</button>
-    </div><div class="kurtka">
-        <img src="man-in-white-dress-shirt-holding-suit-jacket-1043474.jpg" width="100%" height="450px" class="cover zdjecie">
-    <div class="nazwa_produktu" ><a class="nazwa_produktu"> Koszula </a> </div>
-    <div><a> 59.99 PLN </a> </div> <button class="guzik"><img src="koszyk.png" width="30px"height="30px" > Dodaj do koszyka</button>
-    </div><div class="kurtka">
-        <img src="man-in-white-dress-shirt-holding-suit-jacket-1043474.jpg" width="100%" height="450px" class="cover zdjecie">
-    <div class="nazwa_produktu" ><a class="nazwa_produktu"> Koszula </a> </div>
-    <div><a> 59.99 PLN</a> </div> <button class="guzik"><img src="koszyk.png" width="30px"height="30px" > Dodaj do koszyka</button>
-    </div>
-
-
-  </div>
-
-</div>
-    <div class="reklama">
-       TYLKO DZIŚ WYSYŁKA GRATIS !!!!
-    </div>
-    <h1 class="nowosci" > NOWOŚCI DLA NIEJ</h1>
-      
-    <div class="produkty">
-        <div class="kurtka">
-            <img src="business-businessman-contemporary-corporate-532220.jpg" width="100%" height="450px" class="cover zdjecie">
-        <div class="nazwa_produktu" ><a class="nazwa_produktu"> Marynarka </a> </div>
-        <div><a> 99.99 PLN </a> </div> <button class="guzik"><img src="koszyk.png" width="30px"height="30px" > Dodaj do koszyka</button>
+  {% for p in product %}
+        {%for category in  p.category.all %}
+        {% if category.slug == 'dla-niej' %}
+        <div class="kurtka" >
+            {%for item in p.productimage_set.all%}
+            {%if item.thumbnail %}
+            <img src="{{item.image.url}}" width="100%" height="450px" class="cover zdjecie"  >
+            {%endif%}
+            {%endfor%}
+           
+            <div class="nazwa_produktu"  ><a  class="nazwa_produktu" href='/produkty/{{p.slug}}' > {{p.title}} </a> </div>
+        <div> {%if p.sale_price%}
+            <span class="pomarancz">{{ p.sale_price}}PLN</span> <del>{{p.price}}PLN </del>
+            {%else%}
+            <h4>{{p.price}} PLN</h4>
+            {%endif%} </a> </div>
+        <button class="guzik"><img src="{%static '/img/koszyk.png'%}" width="30px"height="30px" > Dodaj do koszyka</button>
         </div>
-        <div class="kurtka">
-            <img src="business-businessman-contemporary-corporate-532220.jpg" width="100%" height="450px" class="cover zdjecie">
-        <div class="nazwa_produktu" ><a class="nazwa_produktu"> Marynarka </a> </div>
-        <div><a> 99.99 PLN </a> </div> <button class="guzik"><img src="koszyk.png" width="30px"height="30px" > Dodaj do koszyka</button>
-        </div><div class="kurtka">
-            <img src="women-s-white-and-black-button-up-collared-shirt-774909.jpg" width="100%" height="450px" class="cover zdjecie">
-        <div class="nazwa_produktu" ><a class="nazwa_produktu"> Koszula damska </a> </div>
-        <div><a> 79.99 PLN </a> </div> <button class="guzik"><img src="koszyk.png" width="30px"height="30px" > Dodaj do koszyka</button>
-        </div><div class="kurtka">
-            <img src="women-s-white-and-black-button-up-collared-shirt-774909.jpg" width="100%" height="450px" class="cover zdjecie">
-        <div class="nazwa_produktu" ><a class="nazwa_produktu"> Koszula damska </a> </div>
-        <div ><a> 79.99 PLN </a> </div> <button class="guzik"><img src="koszyk.png" width="30px"height="30px" > Dodaj do koszyka</button>
-        </div>
-
-
+        {%endif%}
+        {%endfor%}
+        {%endfor%}
       </div>
 
 
