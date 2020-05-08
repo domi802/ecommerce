@@ -15,7 +15,8 @@ def single(request, slug):
     try:
         template = "products/produkt.html"
         products = product.objects.get(slug=slug)
-        context = {'product':products}
+        wszystkie = product.objects.all()
+        context = {'product':products, 'wszystkie':wszystkie}
         return render(request,template,context)
     except:
        raise Http404

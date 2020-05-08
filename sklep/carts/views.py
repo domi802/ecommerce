@@ -19,11 +19,11 @@ def view(request):
     if the_id:
         cart = Cart.objects.get(id=the_id)
         context = {"cart": cart}
+        request.session['cart_items_total'] = cart.cartitem_set.count()
     else:
         empty_message = "Twój koszyk jest pusty czas najwyzszy udać się na zakupy"
-        context = {"empty": True, "empty_message": empty_message}    
-
-    request.session['cart_items_total'] = cart.cartitem_set.count()
+        context = {"empty": True, "empty_message": empty_message}        
+   
     template = "cart/koszyk.html"
     return render(request, template, context)
 

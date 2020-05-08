@@ -291,7 +291,7 @@ padding-bottom: 150px;
 
 .tytul_produktu{
 	padding-top: 50px;
-	margin-left: -150px;
+	margin-left: 10px;
 	margin-bottom: 50px;
 }
 
@@ -365,7 +365,7 @@ height: 600px;
 	text-shadow:1px 1px 7px #2f6627;
 	width: 300px;
 	height: auto;
-	margin-top: 100px;
+	margin-top: 50px;
 }
 
 
@@ -409,7 +409,7 @@ height: 600px;
   .pomarancz{
 	  color: orange;
 	  margin-right: 10px;
-	  font-size: 24px;
+	  font-size: 40px;
   }
 
   .cart
@@ -428,4 +428,9 @@ height: 600px;
 	align-items: center;
 	justify-content: center;
 	border-bottom: groove;
+  }
+
+  .ilosc
+  {
+	  margin-top: 30px;
   }
