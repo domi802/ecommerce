@@ -409,7 +409,7 @@ height: 600px;
   .pomarancz{
 	  color: orange;
 	  margin-right: 10px;
-	  font-size: 40px;
+	  font-size: 30px;
   }
 
   .cart
@@ -437,5 +437,6 @@ height: 600px;
   .inne
   {
 	  text-align: center;
+	  font-size: 40px;
 	  
   }
