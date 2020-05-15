@@ -1,0 +1,34 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block main%}
+<main>
+
+    <div class=" contact" >
+    <h1 class="titlecontact"><b>KONTAKT</b></h1>
+</div>   
+<div class="contact_main">
+<section class="sekcja" >
+<form method="POST" name="siema">
+<h2>Formularz kontakowy</h2>
+{% csrf_token %}
+{{form.first_name}}
+{{form.last_name}}
+{{form.email}}
+{{form.message}}
+<br>
+<button type="submit">Wyślij</button>
+<button type="reset">Resetuj</button>
+</form>
+</section>
+<section class="sekcja">
+
+    <h2>Dane adresowe firmy</h2>
+    <p><b>Numer kontakowy:</b> 123-654-789</p>
+    <p><b>Lokalizacja biura:</b> Piernikowa 321a, 44-100 Gliwice </p>
+    <p><b> Godziny otwarcia biura: </b> Poniedziałek-Piątek 9-16 </p>
+    <p style="margin-left: 188px;">Sobota Niedziela biuro nieczynne</p>
+    
+</div>
+</section>
+</main>
+{%endblock main%}

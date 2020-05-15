@@ -440,3 +440,45 @@ height: 600px;
 	  font-size: 40px;
 	  
   }
+
+  .contact
+  {
+	
+	  height: 400px;
+	  background-image: url("https://www.jo.zain.com/english/PublishingImages/contact-us.png");
+	  background-size: 100%;	
+	  text-align: center;
+  }
+
+  .titlecontact
+  {
+	font-size: 90px;
+	-webkit-text-stroke: 1px black;
+  }
+.contact_main
+{
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 100px ;
+
+}
+
+main form
+{
+	margin-top: 1em;
+	padding-left: 10em;
+}
+
+
+main form input
+{
+display: block;
+margin-top: 1em;
+width: 20rem;
+margin-bottom: 1em;
+
+}
+
+.sekcja  {
+	padding-top: 3em;
+  }
