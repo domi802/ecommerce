@@ -1,8 +1,60 @@
-{%for item in product %}
-<h1>{{item.title}}</h1>
+{%extends 'base.html'%}
+{%load static%}
+{%block main%}
+<main>
 
+{%for item in product %}
     {%endfor%}
     {%if subcategory %}
-     <h2>{{subcategory.title}}</h2>
+     <p style="padding-top: 30px; padding-left: 20px;">{{category.title}} --> {{subcategory.title}}   </p>
     {%endif%} 
-    <h2>{{category.title}}</h2>
+<h1 style="padding-top: 100px; padding-left: 50px;">{{subcategory.title}}</h1>
+
+<div class="produkty">
+      
+    {% for p in product %}
+    {%for category in  p.category.all %}
+    {% if category.slug == 'dla-niego'  %}
+    <div class="kurtka" >
+        {%for item in p.productimage_set.all%}
+        {%if item.thumbnail %}
+        <img src="{{item.image.url}}" width="100%" height="450px" class="cover zdjecie"  >
+        {%endif%}
+        {%endfor%}
+       
+        <div class="nazwa_produktu"  ><a  class="nazwa_produktu" href='/produkty/{{p.slug}}' > {{p.title}} </a> </div>
+    <div> {%if p.sale_price%}
+        <span class="pomarancz">{{ p.sale_price}}PLN</span> <del>{{p.price}}PLN </del>
+        {%else%}
+        <h4>{{p.price}} PLN</h4>
+        {%endif%} </a> </div>
+    <button class="guzik"><img src="{%static '/img/koszyk.png'%}" width="30px"height="30px" > Dodaj do koszyka</button>
+    </div>
+    {%endif%}
+    {% if category.slug == 'dla-niej'  %}
+    <div class="kurtka" >
+        {%for item in p.productimage_set.all%}
+        {%if item.thumbnail %}
+        <img src="{{item.image.url}}" width="100%" height="450px" class="cover zdjecie"  >
+        {%endif%}
+        {%endfor%}
+       
+        <div class="nazwa_produktu"  ><a  class="nazwa_produktu" href='/produkty/{{p.slug}}' > {{p.title}} </a> </div>
+    <div> {%if p.sale_price%}
+        <span class="pomarancz">{{ p.sale_price}}PLN</span> <del>{{p.price}}PLN </del>
+        {%else%}
+        <h4>{{p.price}} PLN</h4>
+        {%endif%} </a> </div>
+    <button class="guzik"><img src="{%static '/img/koszyk.png'%}" width="30px"height="30px" > Dodaj do koszyka</button>
+    </div>
+    {%endif%}
+    {%endfor%}
+    {%endfor%}
+ 
+  
+
+  </div>
+
+</main>    
+
+{%endblock main%}

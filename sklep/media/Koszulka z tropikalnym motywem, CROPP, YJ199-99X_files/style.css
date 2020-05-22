@@ -1,0 +1,98 @@
+#esCategoryBanner img {
+	max-width: 100%;
+}
+
+/* ua disabled */
+body .offbar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: auto;
+	background-color: #690101;
+	min-height: 74px;
+	display: flex;
+	z-index: 999;
+}
+
+body .offbar-inner {
+	box-sizing: border-box;
+	height: auto;
+	max-width: 1300px;
+	padding: 15px 20px;
+	margin: 0 auto;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	align-self: center;
+}
+
+body .offbar-msg {
+	font-size: 14px;
+	text-transform: initial;
+	line-height: 21px;
+	letter-spacing: .2px;
+}
+
+body .offbar-msg a {
+	position: relative; 
+	font-weight: 600;
+	text-decoration: none;
+}
+
+body .offbar-msg a:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3px;
+    height: 1px;
+    width: 100%;
+    content: '';
+    background-color: black;
+}
+body .offbar-closebtn {
+	position: absolute;
+	right: 20px;
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: 0;
+	cursor: pointer;
+	width: 48px;
+	height: 48px;
+}
+body .offbar-closebtn svg {
+	width: 18px;
+	height: 18px;
+}
+
+body .offbar-closebtn:focus {
+    outline: 2px solid rgba(1, 161, 255, 0.25);
+}
+
+@media (max-width: 640px) {
+	body .offbar-inner {
+	    display: flex;
+	    flex-wrap: wrap;
+	    justify-content: center;
+	  	padding: 10px;
+	}
+	
+	body .offbar-msg {
+    	font-size: 9px;
+	    line-height: 14px;
+	    letter-spacing: 0;
+	    margin-right: 30px;
+	}
+	
+	body .offbar-msg a:after {
+		bottom: -1px;
+	}
+	body .offbar-closebtn {
+		right: 8px;
+		top: 8px;
+		width: 32px;
+		height: 32px;
+	}
+}

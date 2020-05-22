@@ -1,0 +1,1 @@
+(window.NArchWebpackJsonp=window.NArchWebpackJsonp||[]).push([[43],[function(e,o,n){n("./node_modules/core-js/index.js"),e.exports=n("./node_modules/whatwg-fetch/fetch.js")}],[[0,0,1]]]);
