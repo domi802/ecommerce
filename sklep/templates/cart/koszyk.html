@@ -4,6 +4,7 @@
 {% if empty %}
 <h1 style="text-align:center">{{ empty_message }} </h1>
 {% else %}
+
 <main class="cart">
  
     <section class="basket_border">Nazwa produktu</section>
@@ -16,18 +17,17 @@
     <section class="basket_border">{% if item.variations.all %} {% for subitem in item.variations.all %} {{subtitem.category|capfirst}}  {{subitem.title|capfirst }} {%endfor%}{%endif%}</section>
     <section class="basket_border">{{item.quantity}}</section>
     <a class="basket_border" href='{% url "update_cart" item.id %}' >Usuń</a>
-    <section class="basket_border">{{item.product.price}} PLN</section>
+    <section class="basket_border">{%if item.product.sale_price %}{{item.product.sale_price}}{%else%}{{item.product.price}}{%endif%} PLN</section>
     {%endfor%}
-    <section class="basket_border"></section>
-    <section class="basket_border"></section>
-    <section class="basket_border"></section>
-    <section class="basket_border"></section>
-    <section class="basket_border">Suma: {{cart.total}} PLN</section>
+
+    
 {% endif %}
    
 </main>
-
-
+<aside>
+    <section>Suma: {{cart.total}} PLN</section>
+    <input type="button" class="zaplac" value="Zapłać"></input>
+    </aside>
 
 
 

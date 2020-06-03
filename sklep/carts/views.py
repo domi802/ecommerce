@@ -22,7 +22,17 @@ def view(request):
         request.session['cart_items_total'] = cart.cartitem_set.count()
     else:
         empty_message = "Twój koszyk jest pusty czas najwyzszy udać się na zakupy"
-        context = {"empty": True, "empty_message": empty_message}        
+        context = {"empty": True, "empty_message": empty_message}   
+    new_total = 0.00 
+    for item in cart.cartitem_set.all():
+        if item.product.sale_price:
+            line_total = float(item.product.sale_price) * item.quantity
+            new_total += line_total
+        else:    
+            line_total = float(item.product.price) * item.quantity
+            new_total += line_total
+    cart.total = new_total
+    cart.save()               
    
     template = "cart/koszyk.html"
     return render(request, template, context)
@@ -70,12 +80,7 @@ def update_cart(request, slug):
                 cart_item.quantity = qty
                 cart_item.save()
         print(slug)  
-        new_total = 0.00 
-        for item in cart.cartitem_set.all():
-                line_total = float(item.product.price) * item.quantity
-                new_total += line_total
-                cart.total = new_total
-                cart.save()      
+        
     
        
     else:
@@ -84,7 +89,8 @@ def update_cart(request, slug):
         cart.total -= cartitem.product.price * cartitem.quantity
         cartitem.delete()
         cart.save()
-        
+
+  
        
 
     return HttpResponseRedirect(reverse("cart"))     
