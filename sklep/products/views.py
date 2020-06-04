@@ -15,7 +15,7 @@ def single(request, slug):
     try:
         template = "products/produkt.html"
         products = product.objects.get(slug=slug)
-        wszystkie = product.objects.all()
+        wszystkie = product.objects.all()[:5]
         context = {'product':products, 'wszystkie':wszystkie}
         return render(request,template,context)
     except:

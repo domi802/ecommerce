@@ -17,22 +17,24 @@ def view(request):
     except:
         the_id = None
     if the_id:
+        
         cart = Cart.objects.get(id=the_id)
         context = {"cart": cart}
         request.session['cart_items_total'] = cart.cartitem_set.count()
+        new_total = 0.00 
+        for item in cart.cartitem_set.all():
+            if item.product.sale_price:
+                line_total = float(item.product.sale_price) * item.quantity
+                new_total += line_total
+            else:    
+                line_total = float(item.product.price) * item.quantity
+                new_total += line_total
+        cart.total = new_total
+        cart.save()  
     else:
         empty_message = "Twój koszyk jest pusty czas najwyzszy udać się na zakupy"
         context = {"empty": True, "empty_message": empty_message}   
-    new_total = 0.00 
-    for item in cart.cartitem_set.all():
-        if item.product.sale_price:
-            line_total = float(item.product.sale_price) * item.quantity
-            new_total += line_total
-        else:    
-            line_total = float(item.product.price) * item.quantity
-            new_total += line_total
-    cart.total = new_total
-    cart.save()               
+             
    
     template = "cart/koszyk.html"
     return render(request, template, context)
