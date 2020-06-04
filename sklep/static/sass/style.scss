@@ -1,0 +1,521 @@
+$colorWhite: #ffffff;
+$maxwidth: 100%;
+$colorBlack: #000000;
+$alignCenter: center;
+@mixin marginPadding(){
+    margin: 0;
+    padding: 0;
+
+}
+.nazwa {
+    color: $colorWhite;
+    font-size: 50px;
+    text-decoration: none;
+  }
+  
+  a.nazwa:hover {
+    color: $colorWhite;
+  }
+  
+  .nav {
+    width: $maxwidth;
+    padding: 10px 0;
+    background-color: $colorBlack;
+    text-align: $alignCenter;
+  }
+  
+  ol {
+    @include marginPadding();  
+    list-style-type: none;
+    font-size: 20px;
+    height: 35px;
+    line-height: 200%;
+    display: inline-block;
+    margin-top: 30px;
+    padding-left: 100px;
+    
+    a {
+      color: $colorWhite;
+      text-decoration: none;
+      display: block;
+    }
+  
+    > li {
+      float: left;
+      width: 150px;
+      height: 40px;
+      border-right: 1px dashed $colorBlack;
+  
+      &:first-child {
+        border-left: 1px dashed $colorBlack;
+      }
+  
+      &:hover {
+        > a {
+          color: $colorWhite;
+        }
+  
+        > ul {
+          display: block;
+        }
+      }
+  
+      > ul {
+        list-style-type: none;
+        @include marginPadding();
+        height: 40px;
+        display: none;
+      }
+  
+      > ul > li {
+        background-color: $colorBlack;
+        position: relative;
+        z-index: 100;
+  
+        &:hover {
+          background-color: #e20b0b;
+  
+          > a {
+            color: $colorWhite;
+          }
+        }
+      }
+    }
+  }
+  
+  .koszyk {
+    padding-left: 600px;
+  }
+  
+  .sale {
+    color: red;
+    text-decoration: none;
+  }
+  
+  main {
+    @include marginPadding();
+    width: $maxwidth;
+    height: auto;
+  }
+  
+  .cover {
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+  
+  .slider {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  .nowosci {
+    padding-top: 100px;
+    text-align: $alignCenter;
+    padding-bottom: 50px;
+    font-size: 80px;
+  }
+  
+  .grid-container {
+    display: -ms-grid;
+    display: grid;
+    grid-column-gap: 4px;
+    -ms-grid-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 140px;
+  }
+  
+  .grid-item {
+    background-color: rgba(1, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 50px;
+    font-size: 10px;
+    text-align: $alignCenter;
+  }
+  
+  .ceny {
+    text-align: end;
+  }
+  
+  .reklama {
+    width: $maxwidth;
+    height: 200px;
+    background-color: $colorBlack;
+    text-align: $alignCenter;
+    color: yellow;
+    font-size: 80px;
+    padding-top: 35px;
+  }
+  
+  .cena {
+    font-size: 20px;
+    color: goldenrod;
+  }
+  
+  .rzecz {
+    padding-top: 10px;
+    font-size: 20px;
+  }
+  
+  .flex-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 150px;
+    height: auto;
+    padding-bottom: 150px;
+  }
+  
+  .pudelka {
+    background-color: #f1f1f1;
+    width: 200px;
+    height: 200px;
+    margin-left: 200px;
+    text-align: $alignCenter;
+    line-height: 75px;
+    font-size: 30px;
+    border-radius: 15px;
+  }
+  
+  .cos {
+    background-color: #285C94;
+    padding-top: 20px;
+  }
+  
+  .zdj {
+    text-align: $alignCenter;
+    margin-top: 50px;
+  }
+  
+  footer {
+    width: $maxwidth;
+    background-color: $colorBlack;
+    height: 3em;
+    overflow:hidden ;
+    transition-duration: 0.5s ;
+  }
+  .rozwiniety
+  {
+    width: $maxwidth;
+    background-color: $colorBlack;
+    height: auto;
+  }
+  .platnosc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #FCB208;
+    padding-top: 30px;
+    margin-left: 25px;
+    padding-bottom: 30px;
+  }
+  
+  .zdjecia {
+    margin-left: 100px;
+  }
+  
+  .korzysci {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #FCB208;
+    padding-top: 40px;
+    margin-left: 25px;
+    padding-bottom: 100px;
+  }
+  
+  .tak {
+    margin-left: 800px;
+  }
+  
+  .a {
+    margin-left: 50px;
+  }
+  
+  .b {
+    margin-left: 105px;
+    padding-bottom: 30px;
+  }
+  
+  .c {
+    margin-left: 105px;
+  }
+  
+  .napis {
+    text-align: $alignCenter;
+    width: $maxwidth;
+    color: #FCB208;
+  }
+  
+  .produkty {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 80%;
+    height: auto;
+    margin-right: 10%;
+    padding-top: 100px;
+    padding-bottom: 150px;
+  }
+  
+  .kurtka {
+    width: 350px;
+    height: 570px;
+    border: solid;
+    border-radius: 15px;
+    margin-left: 100px;
+    text-align: $alignCenter;
+    -webkit-box-shadow: 2px 2px 4px;
+    box-shadow: 2px 2px 4px;
+    margin-bottom: 50px;
+  }
+  
+  .nazwa_produktu {
+    text-align: $alignCenter;
+    font-size: 20px;
+    padding-top: 5px;
+  }
+  
+  .zdjecie {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  
+  .guzik {
+    display: none;
+    background-color: #D8D0D0;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+  }
+  
+  .produkty .kurtka:hover .guzik {
+    display: block;
+  }
+  
+  .tytul_produktu {
+    padding-top: 50px;
+    margin-left: 10px;
+    margin-bottom: 50px;
+  }
+  
+  ul.thumb {
+    @include marginPadding();
+    float: left;
+  
+    li {
+      list-style: none;
+      margin: 0 10px;
+      width: 100px;
+      height: 100px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+  
+      img {
+        width: $maxwidth;
+      }
+    }
+  }
+  
+  .imgBox {
+    float: left;
+    width: 500px;
+    height: 600px;
+    margin-left: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  
+    img {
+      width: $maxwidth;
+    }
+  }
+  
+  li a img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  figure img {
+    width: 500px;
+    height: 600px;
+  }
+  
+  .products {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    -webkit-box-align: $alignCenter;
+    -ms-flex-align: $alignCenter;
+    align-items: $alignCenter;
+  }
+  
+  .obrazy {
+    margin-bottom: 100px;
+    margin-left: -150px;
+  }
+  
+  .myButton {
+    -webkit-box-shadow: inset -2px -3px 3px 0px #3dc21b;
+    box-shadow: inset -2px -3px 3px 0px #3dc21b;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #44c767), to(#6eeb2a));
+    background: linear-gradient(to bottom, #44c767 5%, #6eeb2a 100%);
+    background-color: #44c767;
+    border-radius: 28px;
+    border: 1px solid #29cc39;
+    display: inline-block;
+    color: $colorWhite;
+    font-family: Arial;
+    font-size: 17px;
+    padding: 17px 34px;
+    text-decoration: none;
+    text-shadow: 1px 1px 7px #2f6627;
+    width: 300px;
+    height: auto;
+    margin-top: 50px;
+  }
+  
+  .rozmiary {
+    padding-top: 50px;
+  }
+  
+  .radio-toolbar {
+    margin: 10px;
+  
+    input[type="radio"] {
+      opacity: 0;
+      position: fixed;
+      width: 0;
+    }
+  
+    label {
+      display: inline-block;
+      background-color: #ddd;
+      padding: 10px 20px;
+      font-family: sans-serif, Arial;
+      font-size: 16px;
+      border: 2px solid #444;
+      border-radius: 4px;
+  
+      &:hover {
+        background-color: #dfd;
+      }
+    }
+  
+    input[type="radio"] {
+      &:focus + label {
+        border: 2px dashed #444;
+      }
+  
+      &:checked + label {
+        background-color: #bfb;
+        border-color: #4c4;
+      }
+    }
+  }
+  
+  .pomarancz {
+    color: orange;
+    margin-right: 10px;
+    font-size: 30px;
+  }
+  
+  .cart {
+    width: 70%;
+    margin-left: 10%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(5, 1fr);
+    height: 100%;
+    text-align: $alignCenter;
+  }
+  
+  .basket_border {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: $alignCenter;
+    -ms-flex-align: $alignCenter;
+    align-items: $alignCenter;
+    -webkit-box-pack: $alignCenter;
+    -ms-flex-pack: $alignCenter;
+    justify-content: $alignCenter;
+    border-bottom: groove;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  aside {
+    width: 15%;
+    height: 200px;
+    margin-left: 83%;
+    border: 1px solid;
+    text-align: $alignCenter;
+    font-size: 30px;
+    padding-top: 50px;
+  }
+  
+  .zaplac {
+    text-align: $alignCenter;
+    margin-top: 40px;
+  }
+  
+  .ilosc {
+    margin-top: 30px;
+  }
+  
+  .inne {
+    text-align: $alignCenter;
+    font-size: 40px;
+  }
+  
+  .contact {
+    height: 400px;
+    background-image: url("https://www.jo.zain.com/english/PublishingImages/contact-us.png");
+    background-size: 100%;
+    text-align: $alignCenter;
+  }
+  
+  .titlecontact {
+    font-size: 90px;
+    -webkit-text-stroke: 1px $colorBlack;
+  }
+  
+  .contact_main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+    grid-template-columns: auto auto;
+    grid-gap: 100px;
+  }
+  
+  main form {
+    margin-top: 1em;
+    padding-left: 10em;
+  
+    input {
+      display: block;
+      margin-top: 1em;
+      width: 20rem;
+      margin-bottom: 1em;
+    }
+  }
+  
+  .sekcja {
+    padding-top: 3em;
+  }
+  
+ 

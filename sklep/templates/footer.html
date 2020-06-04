@@ -1,5 +1,6 @@
 {%load static%}
 <footer>
+  <button onclick="myFunction()" >klikaj byku</button>
     <div class="platnosc">
         Akceptowalne metody płatności
         <div><img src="{%static '/img/master.jpg'%}" width="100" height="50" class="zdjecia" ></div>
@@ -34,4 +35,9 @@
     </div>
     </div>
     <div class="napis">Strona powstała w celach educkacyjnych</div>
+    <script>
+      function myFunction() {
+        document.getElementsByTagName("footer")[0].classList.toggle("rozwiniety");
+      }
+      </script>
     </footer>
